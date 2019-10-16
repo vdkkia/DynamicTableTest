@@ -1,0 +1,319 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css">
+    <link rel="stylesheet" href="asset/css/JSTree/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 p-5">
+                <h1>Project #1</h1>
+                <div class="row">
+                    <div id="treeview" class="col-lg-3 col-sm-12 col-md-6">
+                        <div id="html" class="demo"></div>
+                    </div>
+                    <div id="contents" class="col-lg-9 col-sm-12 col-md-6" style="background-color:aliceblue;border-radius: 5px;">
+                        <div id="details" class="col-12 p-2">
+                            <span id="event_result"></span>
+                            <div id="prjDetail" style="display: none;">
+                                <div class="row">
+                                    <div class="col-12 p-2" style="background-color: white;margin-bottom: 5px; border-radius: 5px;">
+                                        <strong>Title:</strong> Project
+                                        <br/>
+                                        <strong>Description:</strong> project description
+                                    </div>
+                                    <div class="col-12"></div>
+                                </div>
+
+                            </div>
+
+                            <div id="presentationDetail" style="display: none;">
+                                <div class="row">
+                                    <div class="col-12 p-2" style="background-color: white;margin-bottom: 5px; border-radius: 5px;">
+                                        <strong style="text-align: center;">Title:</strong> Presentation
+                                        <br/>
+                                        <strong>Description:</strong> presentation description
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-3" id=files style="background-color: white;  min-height: 100vh; padding: 10px; border-radius: 5px;">
+                                                <div style="text-align: center;margin-right: auto; margin-left: auto;"> <strong>Files</strong></div>
+                                                <hr/>
+                                                <ul class="UL" style="list-style: none; font-size: 12px; font-family: 'Space Mono', monospace;padding: 0;">
+                                                    <li>
+                                                        <a href="#"><img src="asset/img/xls.png" /></a><br/><span style="background-color:lightslategrey; color: white;">Sample_Source.xls</span></li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <a href="#"><img src="asset/img/html.png" /></a><br/>Sample_Source.html</li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <a href="#"><img src="asset/img/doc.png" /></a><br/>Sample_Source.doc</li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <a href="#"><img src="asset/img/pdf.png" /></a><br/>Sample_Source.pdf</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-9" id=contents style="min-height: 100vh; padding: 10px;">
+                                                <div style="text-align: center;margin-right: auto; margin-left: auto;"> <strong>Content</strong>
+
+                                                    <div class="container ">
+                                                        <div class="row">
+
+                                                            <div>
+                                                                <select id="sample_sources_id" class="form-control sample_sources_id">
+                                                                                <option value="">Please select a sample source</option>
+                                                                                <option value="1">Animal tissue</option>
+                                                                                <option value="2">Cell line</option>
+                                                                                <option value="3">Human tissue</option>
+                                                                                <option value="4">Plant</option>
+                                                                              </select>
+                                                            </div>
+                                                            <br/><br/>
+                                                            <div class="col-12" style="margin: 0; padding: 0;;">
+                                                                <table>
+                                                                    <table class="table tableX">
+                                                                        <thead class="thead-dark">
+
+                                                                        </thead>
+                                                                        <tbody>
+
+                                                                        </tbody>
+                                                                    </table>
+
+
+                                                                </table>
+
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class=row>
+                                                            <div style="margin-top: 15px">
+
+
+                                                                <div class="form-row align-items-center">
+                                                                    <div class="col-auto my-1">
+                                                                        <button type="button" class="btn btn-primary" onclick="ExportJSON();">Export to JSON</button>
+
+                                                                    </div>
+                                                                    <div class="col-auto my-1">
+                                                                        <button type="button" class="btn btn-primary" onclick="AddRow();">Add Row</button>
+
+                                                                    </div>
+
+                                                                    <div class="col-auto my-1">
+                                                                        <button type="button" class="btn btn-primary" onclick="AddCell();">Add Col</button>
+                                                                    </div>
+
+                                                                    <div class="col-auto my-1">
+                                                                        <input type="text" id="col_name" class="form-control" placeholder="Type column name">
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <div class="form-row">
+
+
+                                                                    <div class="col-sm-6 ">
+                                                                    </div>
+
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <hr/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div id="proposalsDetail" style="display: none;">
+                                <div class="row">
+                                    <div class="col-12 p-2" style="background-color: white;margin-bottom: 5px; border-radius: 5px;">
+                                        <strong>Title:</strong> Proposal
+                                        <br/>
+                                        <strong>Description:</strong> Proposal description
+                                    </div>
+                                    <div class="col-12"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+<style>
+    .UL li {
+        padding-bottom: 10px;
+        text-align: center;
+    }
+    
+    .UL li img {
+        margin-right: auto;
+        margin-left: auto;
+    }
+</style>
+
+<script src="asset/js/jquery.js"></script>
+<script src="asset/js/table.js"></script>
+
+<script src="asset/js/bootstrap.js"></script>
+<script src="asset/js/JSTree/jstree.min.js"></script>
+
+
+<script>
+    $('#html').on('changed.jstree', function(e, data) {
+        let selected = data.instance.get_node(data.selected[0]).id;
+        // $('#event_result').html(selected);
+        $('.PLACEHOLDER').empty();
+
+
+        $("#prjDetail").hide();
+        $("#presentationDetail").hide();
+        $("#proposalsDetail").hide();
+
+
+        switch (selected) {
+            case "j1_1":
+                {
+                    //   $('.PLACEHOLDER').append($("#prjDetail").html());
+                    $("#prjDetail").show();
+                    break;
+                }
+            case "j1_2":
+                {
+
+                    //  $('.PLACEHOLDER').append($("#presentationDetail").html());
+                    $("#presentationDetail").show();
+                    break;
+                }
+            case "j1_3":
+                {
+
+                    // $('.PLACEHOLDER').append($("#proposalsDetail").html());
+                    $("#proposalsDetail").show();
+                    break;
+                }
+            case "j1_4":
+                {
+
+                    break;
+                }
+            case "j1_5":
+                {
+
+                    break;
+                }
+            case "j1_6":
+                {
+
+                    break;
+                }
+            case "j1_7":
+                {
+
+                    break;
+                }
+            case "j1_8":
+                {
+
+                    break;
+                }
+        }
+    }).jstree({
+        'core': {
+            'data': [{
+                "text": "Project",
+                "a_attr": {
+                    "style": "font-weight:bold"
+                },
+                "state": {
+                    "opened": true,
+
+                },
+
+                "children": [{
+                    "text": "Presentations (4)",
+                    "state": {
+                        "opened": true,
+                        "selected": true,
+                    },
+                    "children": [{
+                        "text": "Proposals (0)"
+                    }, {
+                        "text": "Posters (0)"
+                    }, {
+                        "text": "Slideshows (0)"
+                    }]
+                }, {
+                    "text": "Investigation",
+                    "a_attr": {
+                        "style": "font-weight:bold"
+                    },
+                    "state": {
+                        "opened": true
+                    },
+                    "children": [{
+                        "text": "Presentations (0)",
+                        "state": {
+                            "opened": true
+                        },
+                        "children": [{
+                            "text": "Proposals (0)"
+                        }, {
+                            "text": "Posters (0)"
+                        }, {
+                            "text": "Slideshows (0)"
+                        }, {
+                            "text": "Articles (0)"
+                        }]
+                    }, {
+                        "text": "Study",
+                        "state": {
+                            "opened": true
+                        },
+                        "a_attr": {
+                            "style": "font-weight:bold"
+                        },
+                        "children": [{
+                            "text": "Files (0)"
+                        }, {
+                            "text": "Assay",
+                            "state": {
+                                "opened": true
+                            },
+                            "a_attr": {
+                                "style": "font-weight:bold"
+                            },
+                            "children": [{
+                                "text": "Files (0)"
+                            }, ]
+                        }, ]
+                    }, ]
+                }, ]
+            }]
+        }
+    });
+</script>
+
+
+
+</html>
